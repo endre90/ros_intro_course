@@ -63,6 +63,7 @@ class move_robot():
         self.PickupItem = [-1.9869545141803187, -2.8116379419909876, -1.673121754323141, -2.9397900740252894, -1.8531244436847132, 2.8158133029937744]
         self.PreLeaveItem = [2.8554534912109375, -1.9093416372882288, -1.6196392218219202, -0.16853887239565069, 0.29794907569885254, -2.71275240579714]
         self.LeaveItem = [2.565089225769043, -2.2353528181659144, -1.2208731810199183, 0.029781093820929527, 0.5769367814064026, -3.0112414995776575]
+        self.Up = [5.081929685547949e-05, -1.570774324260559, -8.439498278312385e-05, -1.5707146640149876, 1.4722079085186126e-05, 6.612974880263209e-05
 
         # Robot joint identifiers:
         self.joints.name = ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint', \
@@ -74,7 +75,8 @@ class move_robot():
                                 self.PrePickupItem,
                                 self.PickupItem,
                                 self.PreLeaveItem,
-                                self.LeaveItem]
+                                self.LeaveItem,
+                                self.Up]
         
         # Pose name list to map to pose list
         self.joint_pose_name_list = ["PRE_TOOL",
@@ -82,7 +84,8 @@ class move_robot():
                                      "PRE_PICKUP_ITEM",
                                      "PICKUP_ITEM",
                                      "PRE_LEAVE_ITEM",
-                                     "LEAVE_ITEM"]
+                                     "LEAVE_ITEM",
+                                     "UP"]
 
         # Pose tolerance:
         self.joint_tol = 0.01
@@ -94,9 +97,10 @@ class move_robot():
         rospy.sleep(2)
 
         # Add some objects in the scene
-        self.add_object("TOOL", [1, 0, 1, 0, 0, 0], (0.1, 0.1, 0.1))
-        self.add_object("TABLE", [-1, 0, 0.5, 0, 0, 0], (0.5, 2, 1))
-        self.add_object("ITEM", [-1, 0, 0.2, 0, 0, 0], (0.5, 2, 1.1))
+        self.add_object("TOOL", [0.5, 0, 1.5, 0, 0, 0], (0.1, 0.1, 0.1))
+        self.add_object("TABLE", [-0.75, 0, 0.5, 0, 0, 0], (0.75, 2, 1))
+        self.add_object("ITEM", [-0.7, -0.2, 1.1, 0, 0, 0], (0.2, 0.2, 0.2))
+        #self.add_object("HUMAN", [0, 0.6, 1, 0, 0, 0], (0.6, 0.3, 2))
 
         rospy.sleep(1)
 
