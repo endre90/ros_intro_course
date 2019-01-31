@@ -52,6 +52,7 @@ add_message_files(
   FILES
   Command.msg
   State.msg
+  CustomMsg1.msg
 )
 
 ## Generate services in the 'srv' folder
