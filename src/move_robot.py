@@ -136,7 +136,7 @@ class move_robot():
 
     def switcher(self, what, case_list):
 
-        for i in range(0, len(case_list) + 1, 1):
+        for i in range(0, len(case_list), 1):
             if what == case_list[i]:
                 return i
                 break

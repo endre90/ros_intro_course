@@ -154,11 +154,11 @@ class control():
             # 2. tool state (attached or not)
             # 3. item pose (pose2, pose2)
             # 4. item state (attached or not)
-            # 5. it would be nice to keep track of the robot velocity but we dont have that in the demo sim
+            # 5. it would be nice to keep track of the robot velocity but we dont have that in the demo sim (use official ur sim)
         # This makes a total of 2 x 2 x 2 x nr.of_robot_poses = a lot of states...
 
 
-
+        # Ignore this or use parts... (not ready)
         # if self.item_pos == "POSE1":
             # if "TOOL" not in self.attached_objects:  # and self.moving == False: (not usable in the demo sim)
                 # self.assign_and_publish("MOVE", "", "PRE_TOOL", 0.5, 0.5, 0.01)
@@ -182,6 +182,7 @@ class control():
                     # self.assign_and_publish("DETTACH", "", "AT_TOOL", 0.1, 0.1, 0.01)
                     # time.sleep(2)
                     # self.assign_and_publish("MOVE", "", "PRE_TOOL", 0.1, 0.1, 0.01)
+                    
 
 if __name__ == '__main__':
     try:
